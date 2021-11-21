@@ -27,6 +27,17 @@ func main() {
 	}
 
 	fmt.Println(prog1)
+	fmt.Println(prog1.name, prog1.age, prog1.language)
 	fmt.Println(p1)
 	fmt.Println(p1.name)
+
+	char := struct {
+		name string
+		elementType string
+	}{
+		name : "Charmander",
+		elementType: "fire",
+	}
+
+	fmt.Println(char)
 }
