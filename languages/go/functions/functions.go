@@ -13,6 +13,28 @@ func main() {
 	numbers := []int{2, 3, 4, 6, 7, 15, 19}
 	sum(numbers...)
 	sum(3, 4, 6)
+	
+	func(num int) {
+		fmt.Println("Helloooooo", num)
+	}(42)
+
+	myFunct := func() {
+		fmt.Println("Hello from my fuction")
+	}
+
+	myFunct()
+	
+	secretVar := secret()
+	fmt.Printf("%T", secretVar)
+	fmt.Println()
+	
+	fmt.Println(secret()())
+}
+
+func secret() func() int {
+	return func() int {
+		return 300
+	}
 }
 
 func yollolo() {
