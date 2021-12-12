@@ -1,0 +1,1 @@
+You can find username and encrypted pw in `HomeAsistant/config/.storage/auth_provider.homeassistant`-file.
