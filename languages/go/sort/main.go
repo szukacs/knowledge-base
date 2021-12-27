@@ -14,6 +14,12 @@ func (p Person) String() string {
 	return fmt.Sprintf("%s: %d", p.name, p.age)
 }
 
+type ByAge []Person
+
+func (a ByAge) Len() int { return len(a) }
+func (a ByAge) Swap(i, j int) { a[i], a[j] = a[j], a[i] }
+func (a ByAge) Less(i, j int) bool { return a[i].age < a[j].age }
+
 func main() {
  numbers := []int {4, 2, 6, 1, 7, 10, 17, 12}
  strings := []string {"Bob", "Tom", "Adam"}
@@ -36,6 +42,8 @@ func main() {
 
  people := []Person{p1, p2, p3, p4}
  
+ fmt.Println(people)
+ sort.Sort(ByAge(people))
  fmt.Println(people)
 	
 }
